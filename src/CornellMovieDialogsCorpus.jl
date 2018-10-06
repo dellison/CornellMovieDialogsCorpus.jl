@@ -4,7 +4,7 @@ using DataDeps
 
 basedir()              = datadep"Cornell Movie Dialogs Corpus"
 
-metadata_file()        = joinpath(basedir, "movie_characters_metadata.txt")
+metadata_file()        = joinpath(basedir(), "movie_characters_metadata.txt")
 conversations_file()   = joinpath(basedir(), "movie_conversations.txt")
 lines_file()           = joinpath(basedir(), "movie_lines.txt")
 titles_metadata_file() = joinpath(basedir(), "movie_titles_metadata.txt")
