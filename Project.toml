@@ -1,0 +1,7 @@
+name = "CornellMovieDialogsCorpus"
+uuid = "0ee5fc8e-c99a-11e8-1516-dbd6e12eb161"
+authors = ["David Ellison <davidehellison@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
