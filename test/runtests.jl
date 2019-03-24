@@ -1,10 +1,12 @@
-using CornellMovieDialogsCorpus:
-    metadata_file, conversations_file, lines_file,
-    titles_metadata_file, raw_script_urls_file, readme 
-using Test
+using CornellMovieDialogsCorpus, Test
 
-for filef in [metadata_file, conversations_file, lines_file,
-              titles_metadata_file, raw_script_urls_file, readme]
-    file = filef()
-    @test isfile(file)
+@testset "CornellMovieDialogsCorpus.jl" begin
+    characters = movie_character_metadata()
+    conversations = movie_conversations()
+    lines = movie_lines()
+    movies = movie_title_metadata()
+
+    @test length(characters) == 9035
+    @test length(movies) == 617
+    @test length(lines) == 304_713
 end
