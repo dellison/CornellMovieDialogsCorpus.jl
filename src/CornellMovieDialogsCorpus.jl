@@ -7,14 +7,14 @@ export
 using Dates
 using CSV, DataDeps
 
-basedir()                 = datadep"CornellMovieDialogsCorpus"
+corpusfile(file) = joinpath(datadep"CornellMovieDialogsCorpus", file)
 
-character_metadata_file() = joinpath(basedir(), "movie_characters_metadata.txt")
-conversations_file()      = joinpath(basedir(), "movie_conversations.txt")
-lines_file()              = joinpath(basedir(), "movie_lines.txt")
-title_metadata_file()     = joinpath(basedir(), "movie_titles_metadata.txt")
-raw_script_urls_file()    = joinpath(basedir(), "raw_script_urls.txt")
-readme_file()             = joinpath(basedir(), "README.txt")
+character_metadata_file() = corpusfile("movie_characters_metadata.txt")
+conversations_file()      = corpusfile("movie_conversations.txt")
+lines_file()              = corpusfile("movie_lines.txt")
+title_metadata_file()     = corpusfile("movie_titles_metadata.txt")
+raw_script_urls_file()    = corpusfile("raw_script_urls.txt")
+readme_file()             = corpusfile("README.txt")
 
 read_list(str) = [m.captures[1] for m in eachmatch(r"'([^']+)'", str)]
 
@@ -32,6 +32,7 @@ end
 """
     movie_conversations(;kwargs...)
 
+Load the conversations file of the movie dialog corpus.
 """
 function movie_conversations(;kwargs...)
     header = [:character1_id, :character2_id, :movie_id, :lines]
@@ -41,7 +42,7 @@ end
 """
     movie_lines(;kwargs...)
 
-todo
+Load the lines file of the movie dialog corpus.
 """
 function movie_lines(;kwargs...)
     header = [:line_id, :character_id, :movie_id, :character_name, :text]
@@ -51,7 +52,7 @@ end
 """
     movie_titles_metadata(;kwargs...)
 
-todo
+Load the movie title metadata file of the movie dialog corpus.
 """
 function movie_title_metadata(;kwargs...)
     header = [:movie_id, :title, :year, :rating, :votes, :genres]
@@ -63,7 +64,7 @@ end
 """
     movie_character_metadata(;kwargs...)
 
-todo
+Load the character metadata file of the movie dialog corpus.
 """
 function movie_character_metadata(;kwargs...)
     header = [:character_id, :name, :movie_id, :title, :gender, :position]
@@ -73,7 +74,7 @@ end
 """
     movie_script_urls(;kwargs...)
 
-todo
+Load the urls file of the movie dialog corpus.
 """
 function movie_script_urls(;kwargs...)
     header = [:movie_id, :movie_title, :url]
