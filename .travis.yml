@@ -21,4 +21,4 @@ script:
   # - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
 #  - julia --check-bounds=yes -e 'Pkg.clone(pwd()); Pkg.build("CornellMovieDialogsCorpus"); Pkg.test("CornellMovieDialogsCorpus"; coverage=true)'
 after_success:
-  - julia -e 'using Pkg; Pkg.clone(pwd()); Pkg.build("CornellMovieDialogsCorpus"); Pkg.test("CornellMovieDialogsCorpus"; coverage=true)'
+  - julia -e 'using Pkg; cd(Pkg.dir("CornellMovieDialogsCorpus")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
