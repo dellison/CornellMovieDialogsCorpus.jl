@@ -1,7 +1,6 @@
 # CornellMovieDialogsCorpus.jl
 
-[![Build Status](https://travis-ci.org/dellison/CornellMovieDialogsCorpus.jl.svg?branch=master)](https://travis-ci.org/dellison/CornellMovieDialogsCorpus.jl)
-
+[![Build Status](https://travis-ci.org/dellison/CornellMovieDialogsCorpus.jl.svg?branch=master)](https://travis-ci.org/dellison/CornellMovieDialogsCorpus.jl) [![codecov](https://codecov.io/gh/dellison/CornellMovieDialogsCorpus.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/dellison/CornellMovieDialogsCorpus.jl)
 
 CornellMovieDialogsCorpus.jl is a Julia package that provides a thin wrapper for the [Cornell Movie Dialogs Corpus](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).
 
